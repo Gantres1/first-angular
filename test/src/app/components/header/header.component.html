@@ -1,0 +1,15 @@
+<header class="header">
+    {{vopr}}
+    <br><br>
+    <div style="white-space: pre-wrap" [innerHTML]="Pereb()"></div>
+    <br>
+    <p>Введите номер ответа</p>
+    <form (submit)="Func(text.value)" >  
+        <div>
+            <input type="text" #text>
+            <button type="submit">d</button>
+        </div>
+    </form>
+    <br>
+    <p style="white-space: pre-wrap">{{rez}}</p>
+</header>
