@@ -1,0 +1,12 @@
+<form action="" (submit)="ParseAiken(t.value)" >
+    <textarea name="" id="" cols="30" rows="10" #t></textarea>
+    <button type="submit">Парсить</button>
+</form>
+
+<p class="">
+    {{vopr}}
+</p>
+
+<p *ngFor="let v of variants; let i = index">
+    {{i+1}} - {{v.text}}
+</p>

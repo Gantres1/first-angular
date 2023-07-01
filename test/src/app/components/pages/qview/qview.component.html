@@ -1,0 +1,14 @@
+{{vopr}}
+<br><br>
+<div style="white-space: pre-wrap" [innerHTML]="Pereb()"></div>
+<br>
+<p *ngFor="let item of otv; let i = index">{{i+1}} - {{item}}</p>
+<p>Введите номер ответа</p>
+<form (submit)="Func(text.value)" >  
+    <div>
+        <input type="text" #text>
+        <button type="submit">d</button>
+    </div>
+</form>
+<br>
+<p style="white-space: pre-wrap">{{rez}}</p>

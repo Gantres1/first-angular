@@ -1,15 +1,7 @@
 <app-header class="q"></app-header>
 
-
-<form action="" (submit)="ParseAiken(t.value)" >
-    <textarea name="" id="" cols="30" rows="10" #t></textarea>
-    <button type="submit">Парсить</button>
-</form>
-
-<p>
-    {{vopr}}
-</p>
-
-<p *ngFor="let v of variants; let i = index">
-    {{i+1}} - {{v.text}}
-</p>
+<main class="container">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <router-outlet></router-outlet>
+    </div>
+</main>

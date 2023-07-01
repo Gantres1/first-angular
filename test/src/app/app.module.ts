@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ReadfileComponent } from './components/readfile/readfile.component';
+import { QeditComponent } from './components/pages/qedit/qedit.component';
+import { QviewComponent } from './components/pages/qview/qview.component';
+import { ParsingComponent } from './components/pages/parsing/parsing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ReadfileComponent,
+    QeditComponent,
+    QviewComponent,
+    ParsingComponent,
   ],
   imports: [
     BrowserModule,

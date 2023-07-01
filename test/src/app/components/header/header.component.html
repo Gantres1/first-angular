@@ -1,16 +1,11 @@
-<header class="header">
-    {{vopr}}
-    <br><br>
-    <div style="white-space: pre-wrap" [innerHTML]="Pereb()"></div>
-    <br>
-    <p *ngFor="let item of otv; let i = index">{{i+1}} - {{item}}</p>
-    <p>Введите номер ответа</p>
-    <form (submit)="Func(text.value)" >  
-        <div>
-            <input type="text" #text>
-            <button type="submit">d</button>
-        </div>
-    </form>
-    <br>
-    <p style="white-space: pre-wrap">{{rez}}</p>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="qedit" class="nav-link px-2 text-white">Редактор</a></li>
+          <li><a routerLink="qview" class="nav-link px-2 text-white">Просмотр</a></li>
+          <li><a routerLink="parsing" class="nav-link px-2 text-white">Парсинг</a></li>
+        </ul>
+      </div>
+    </div>
 </header>
