@@ -6,6 +6,7 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./parsing.component.css']
 })
 export class ParsingComponent implements OnInit{
+
   vopr:string;
   variants: Otvet[];
 
@@ -15,11 +16,12 @@ export class ParsingComponent implements OnInit{
     let ans:number = a.indexOf("ANSWER: ");
     let verno:string = a.substring(ans + 8, ans + 9);
     console.log(verno)
-    let g:number = ans;
+    
 
     const fromDb = undefined; //      Без этой баллалайки
     this.variants = fromDb || [];//   не работает variants
 
+    let g:number = ans;
     while(a.lastIndexOf('.', g - 1) >= 0){
       let litera:string;
       let text:string;
@@ -50,9 +52,9 @@ export class ParsingComponent implements OnInit{
       
       this.variants.unshift(otv);
     }
-    let s:number = 0;
-    s = a.indexOf('.') - 2;
+    let s:number = a.indexOf('.') - 2;
     this.vopr = a.substring(a.lastIndexOf('\n', s - 1) + 1, s);
+    console.log(this.variants[0].litera, this.variants[0].text, this.variants[0].rez);
 
     return false;
   }

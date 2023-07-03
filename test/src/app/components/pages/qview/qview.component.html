@@ -12,3 +12,20 @@
 </form>
 <br>
 <p style="white-space: pre-wrap">{{rez}}</p>
+
+<br>
+<br>
+
+<br>
+<form (submit)="Check()">
+    <p>{{vop.vopr}}</p>
+    <div *ngFor="let item of vop.variants; let i = index" class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value= {{item.rez}} >
+        <label class="form-check-label" for="flexRadioDefault1">
+            {{item.litera}} - {{item.text}}
+        </label>
+    </div>
+    <button type="submit" id="one">Отправить</button>
+    <br><br>
+    {{rezult}}
+</form>
