@@ -1,0 +1,23 @@
+<form (submit)="Check(); Check2()" >
+    <div (submit)="Check()">
+        <p>{{bank.quests[0].vopr}}</p>
+        <div *ngFor="let item of vopros.variants; let i = index" class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault" value= {{vopros.variants[i].rez}}>
+            <label class="form-check-label" for="flexRadioDefault1">
+                {{vopros.variants[i].litera}} - {{vopros.variants[i].text}}
+            </label>
+        </div><hr>
+    </div>
+
+    <div (submit)="Check2()">
+        <p>{{bank.quests[1].vopr}}</p>
+        <div *ngFor="let item of bank.quests[1].variants; let i = index" class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault" value= {{bank.quests[1].variants[i].rez}}>
+            <label class="form-check-label" for="flexRadioDefault1">
+                {{bank.quests[1].variants[i].litera}} - {{bank.quests[1].variants[i].text}}
+            </label>
+        </div><br>               
+    </div>
+    <button type="submit" id="one">Отправить</button><hr>
+    <p>{{vivod}}</p>
+</form>

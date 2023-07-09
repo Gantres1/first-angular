@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Vopros } from '../../../models/q';
+import { Vopros } from '../../../models/vopros';
 @Component({
   selector: 'app-qview',
   templateUrl: './qview.component.html',
