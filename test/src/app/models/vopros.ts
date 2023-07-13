@@ -8,47 +8,43 @@ export class Vopros {
         let otv:Otvet = {
           litera: "",
           text: "",
-          rez: ''
+          rez: null
         };
+        const fromDb = undefined; //      Без этой баллалайки
+        this.variants = fromDb || [];//   не работает variants
 
         otv = {
             litera: "1",
             text: "Отлично",
-            rez: 'true'
+            rez: true
         };
-
-        const fromDb = undefined; //      Без этой баллалайки
-        this.variants = fromDb || [];//   не работает variants
         this.variants[0] = otv;
 
         otv = {
             litera: "2",
             text: "Хорошо",
-            rez: 'false'
+            rez: false
         };
-
         this.variants[1] = otv;
 
         otv = {
             litera: "3",
             text: "Плохо",
-            rez: 'false'
+            rez: false
         };
-
         this.variants[2] = otv;
 
         otv = {
             litera: "4",
             text: "Херого",
-            rez: 'false'
+            rez: false
         };
-
         this.variants[3] = otv;
     }
 }
 
-interface Otvet {
+export interface Otvet {
     litera: string,
     text: string,
-    rez: string
+    rez: boolean
 }

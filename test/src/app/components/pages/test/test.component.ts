@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Bank } from 'src/app/models/bank';
 import { Vopros } from 'src/app/models/vopros';
+import { GlobalService } from 'src/app/sevices/global.service';
 
 @Component({
   selector: 'app-test',
@@ -8,38 +9,23 @@ import { Vopros } from 'src/app/models/vopros';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent {
-  bank = new Bank;
-  vopros = new Vopros;
-  itog1:number = 0;
-  itog2:number = 0;
-  final:number = null;
-  vivod = '';
-
+  itog:number = 0;
+  vivod = "";
+  constructor(public globalService: GlobalService) {}
   Check() {
-    var inp = document.getElementsByName('flexRadioDefault');
+    var inp = document.getElementsByClassName('form-check-input');
+    for (let a = 0; a < this.globalService.cbank.quests.length; a++) {     
       for (var i = 0; i < inp.length; i++) {
         var radio = inp[i];
-        if ((radio as HTMLInputElement).checked && (radio as HTMLInputElement).value.toString() == 'true') {
-            this.itog1 = 1;
-        } else if ((radio as HTMLInputElement).checked && (radio as HTMLInputElement).value.toString() == 'false'){
-          this.itog1 = 0;            
+        if ((radio as HTMLInputElement).checked && (radio as HTMLInputElement).name == 'flexRadioDefault' + a && (radio as HTMLInputElement).value == 'true') {
+          this.itog++;
+        } else if ((radio as HTMLInputElement).checked && (radio as HTMLInputElement).name == 'flexRadioDefault' + a && (radio as HTMLInputElement).value == 'false'){
+          continue;            
         }
       }
+    }
+    this.vivod = 'Вы решили ' + this.itog + '/' + this.globalService.cbank.quests.length
+    this.itog = 0;
     return false;
   }
-  Check2() {
-    var inp = document.getElementsByName('flexRadioDefault2');
-      for (var i = 0; i < inp.length; i++) {
-        var radio = inp[i];
-        if ((radio as HTMLInputElement).checked && (radio as HTMLInputElement).value.toString() == 'true') {
-          this.itog2 = 1;
-        } else if ((radio as HTMLInputElement).checked && (radio as HTMLInputElement).value.toString() == 'false'){
-          this.itog2 = 0;            
-        }
-      }
-    this.final = this.itog1 + this.itog2;
-    this.vivod = 'Решено ' + this.final + '/2'
-    return false;
-  }
-
 }

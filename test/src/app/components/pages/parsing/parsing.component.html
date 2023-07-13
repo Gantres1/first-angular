@@ -4,9 +4,9 @@
 </form>
 
 <p class="">
-    {{vopr}}
+    {{vopr.vopr}}
 </p>
 
-<p *ngFor="let v of variants; let i = index">
-    {{i+1}} - {{v.text}}
+<p *ngFor="let v of vopr.variants; let i = index">
+    {{i+1}} - {{v.text}} - {{v.rez}}
 </p>
