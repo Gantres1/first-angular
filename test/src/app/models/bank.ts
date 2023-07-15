@@ -16,13 +16,13 @@ export class Bank {
         vp.variants.length = 0;
 
         vp.variants[0] = {
-            litera: "1",
+            litera: "A",
             text: "Да",
             rez: true
         };
 
         vp.variants[1] = {
-            litera: "2",
+            litera: "B",
             text: "Нет",
             rez: false
         };

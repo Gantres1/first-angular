@@ -1,0 +1,19 @@
+.btn{
+    margin-right: 5px;
+}
+.btn-success {
+    background-color: rgb(99, 255, 151);  
+    border: 2px solid;
+    border-color: rgb(0, 167, 36);
+    color: rgb(0, 0, 0);
+}
+.btn-danger{
+    background-color: rgb(255, 99, 99);
+    border: 2px solid;
+    border-color: rgb(167, 0, 0);
+    color: rgb(0, 0, 0);
+}
+.varlitera{
+    margin: 0 5px;
+    max-width: 25px;
+}

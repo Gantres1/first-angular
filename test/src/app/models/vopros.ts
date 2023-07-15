@@ -14,28 +14,28 @@ export class Vopros {
         this.variants = fromDb || [];//   не работает variants
 
         otv = {
-            litera: "1",
+            litera: "B",
             text: "Отлично",
             rez: true
         };
         this.variants[0] = otv;
 
         otv = {
-            litera: "2",
+            litera: "A",
             text: "Хорошо",
             rez: false
         };
         this.variants[1] = otv;
 
         otv = {
-            litera: "3",
+            litera: "C",
             text: "Плохо",
             rez: false
         };
         this.variants[2] = otv;
 
         otv = {
-            litera: "4",
+            litera: "D",
             text: "Херого",
             rez: false
         };
