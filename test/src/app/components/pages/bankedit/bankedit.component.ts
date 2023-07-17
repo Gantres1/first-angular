@@ -10,18 +10,31 @@ import { GlobalService } from 'src/app/sevices/global.service';
 })
 export class BankeditComponent {
   vopros = new Vopros;
+  literaData  = ['A','B','C','D','E','F','G','H','I','J'];
+
   Del(a,i){
     var div = document.querySelector('#div' + a + "" + i);
     var div2 = div.parentNode;
-    div2.removeChild(div);
+    div2.removeChild(div);   
     return false;
   }
   Ch(a){  
     var area = document.querySelector('#tv' + a) as HTMLInputElement;   
-    this.globalService.cbank.quests[a].vopr = area.value;  
- 
     var inp = Array.from(document.getElementsByClassName('form-check' + a));
-    this.vopros.variants.length = 0;
+    let arr = this.literaData.slice();
+    let x:number = 0;
+
+    inp.forEach(i => {
+      delete arr[arr.indexOf((i.querySelector('.varlitera') as HTMLInputElement).value)]
+      x++;
+    });
+    for (let i = 0; i < x; i++) {
+      if(arr[i]){
+        alert("Нарушена литерация!!!");
+        return false;
+      }
+    }
+    this.vopros.variants.length = 0; 
     inp.forEach(i => {
       this.vopros.variants.push({
         text:(i.querySelector('.vartext') as HTMLInputElement).value,
@@ -29,14 +42,27 @@ export class BankeditComponent {
         rez:(i.querySelector('.form-check-input') as HTMLInputElement).checked,
       })
     });
+    this.globalService.cbank.quests[a].vopr = area.value;  
     this.vopros.variants.sort((a, b) => a.litera > b.litera ? 1 : -1);
     this.globalService.cbank.quests[a].variants = this.vopros.variants;
     return false;
   }
-  Zbros(a){
-    var area = document.querySelector('#tv' + a) as HTMLInputElement; 
-    area.value = this.globalService.cbank.quests[a].vopr;
+  Add(a){
+    if(this.globalService.cbank.quests[a].variants.length < 10){
+      this.globalService.cbank.quests[a].variants[this.globalService.cbank.quests[a].variants.length] = {
+        text:'',
+        litera:this.literaData[this.globalService.cbank.quests[a].variants.length],
+        rez:false,  
+      }
+    }else{
+      alert("Превышение допустимого лимита!!!")
+      return false;
+    }
     return false
+  }
+  Zbros(a){
+    (document.querySelector('#tv' + a) as HTMLInputElement).value = this.globalService.cbank.quests[a].vopr;
+    return false;
   }
   constructor(public globalService: GlobalService) {}
 }

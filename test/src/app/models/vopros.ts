@@ -1,8 +1,9 @@
 export class Vopros {
     vopr:string;
     variants: Otvet[];
-  
+
     constructor() {
+
         this.vopr = "Как дела?";
 
         let otv:Otvet = {

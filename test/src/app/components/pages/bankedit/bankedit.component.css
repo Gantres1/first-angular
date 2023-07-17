@@ -7,6 +7,19 @@
     border-color: rgb(0, 167, 36);
     color: rgb(0, 0, 0);
 }
+.btn-info{
+    margin-left: 5px;
+    max-height: 30px;
+    text-align: center;
+}
+.btn-add{
+    background-color: rgb(22, 181, 255);  
+    border: 2px solid;
+    border-color: rgb(38, 107, 255);
+    color: rgb(0, 0, 0);
+    margin-left: 800px;
+
+}
 .btn-danger{
     background-color: rgb(255, 99, 99);
     border: 2px solid;
@@ -15,5 +28,5 @@
 }
 .varlitera{
     margin: 0 5px;
-    max-width: 25px;
+
 }

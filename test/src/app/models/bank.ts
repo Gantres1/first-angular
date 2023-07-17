@@ -5,6 +5,7 @@ export class Bank {
     
     constructor() {
         let vop = new Vopros;
+
         const fromDb = undefined; //      Без этой баллалайки
         this.quests = fromDb || [];//     не работает quests
         this.quests.push(vop);
